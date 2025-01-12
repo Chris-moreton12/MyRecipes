@@ -23,3 +23,19 @@ def signup():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+
+        # Validate the username and password
+        if len(username) < 3 or len(password) < 6:
+            return "Username must be at least 3 characters and password must be at least 6 characters."
+
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+        # Check if the username already exists
+        if users_collection.find_one({'username': username}):
+            return "Username already exists. Please choose another."
+
+        # Insert the new user into the database
+        users_collection.insert_one({'username': username, 'password': hashed_password})
+        return redirect(url_for('login'))
+
+    return render_template('signup.html')
