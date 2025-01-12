@@ -38,4 +38,21 @@ def signup():
         users_collection.insert_one({'username': username, 'password': hashed_password})
         return redirect(url_for('login'))
 
-    return render_template('signup.html')
+        return render_template('signup.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        # Fetch user from the database
+        user = users_collection.find_one({'username': username})
+        if user and bcrypt.check_password_hash(user['password'], password):
+            session['user_id'] = str(user['_id'])
+            session['username'] = username
+            return redirect(url_for('dashboard'))
+
+        return "Invalid username or password."
+
+    return render_template('login.html')
