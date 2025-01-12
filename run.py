@@ -13,3 +13,13 @@ client = MongoClient('mongodb+srv://Chris:Cmoreton3912@myrecipe.95tdx.mongodb.ne
 db = client['recipe_app']
 users_collection = db['users']
 recipes_collection = db['recipes']
+
+@app.route('/')
+def home():
+    return redirect(url_for('login'))
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
