@@ -86,4 +86,44 @@ def edit_recipe(recipe_id):
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
+    # Convert string recipe_id to ObjectId
+    recipe = recipes_collection.find_one({'_id': ObjectId(recipe_id), 'user_id': session['user_id']})
+    if not recipe:
+        return "Recipe not found."
+
+    if request.method == 'POST':
+        # Update the recipe
+        new_title = request.form['title']
+        new_content = request.form['content']
+
+        # Ensure title and content are provided
+        if not new_title or not new_content:
+            return "Title and content are required."
+
+        recipes_collection.update_one(
+            {'_id': ObjectId(recipe_id), 'user_id': session['user_id']},
+            {'$set': {'title': new_title, 'content': new_content}}
+        )
+        return redirect(url_for('dashboard'))
+
+    return render_template('edit.html', recipe=recipe)
+
+@app.route('/delete/<recipe_id>', methods=['POST'])
+def delete_recipe(recipe_id):
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    # Delete the recipe
+    recipes_collection.delete_one({'_id': ObjectId(recipe_id), 'user_id': session['user_id']})
+    return redirect(url_for('dashboard'))
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('login'))
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
+
 
