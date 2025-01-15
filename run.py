@@ -69,5 +69,21 @@ def dashboard():
 
         # Ensure title and content are provided
         if not title or not content:
-            return "Title and content are required."
+                        return "Title and content are required."
+
+        recipes_collection.insert_one({
+            'user_id': session['user_id'],
+            'title': title,
+            'content': content
+        })
+
+    # Retrieve all recipes for the logged-in user
+    user_recipes = recipes_collection.find({'user_id': session['user_id']})
+    return render_template('dashboard.html', username=session['username'], recipes=user_recipes)
+
+@app.route('/edit/<recipe_id>', methods=['GET', 'POST'])
+def edit_recipe(recipe_id):
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
 
