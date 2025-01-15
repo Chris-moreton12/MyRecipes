@@ -56,3 +56,18 @@ def login():
         return "Invalid username or password."
 
     return render_template('login.html')
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        # Create a new recipe
+        title = request.form['title']
+        content = request.form['content']
+
+        # Ensure title and content are provided
+        if not title or not content:
+            return "Title and content are required."
+
