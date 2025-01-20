@@ -20,6 +20,9 @@ def home():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    if 'user_id' in session:  # Redirect if already logged in
+        return redirect(url_for('dashboard'))
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -38,10 +41,13 @@ def signup():
         users_collection.insert_one({'username': username, 'password': hashed_password})
         return redirect(url_for('login'))
 
-        return render_template('signup.html')
+    return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if 'user_id' in session:  # Redirect if already logged in
+        return redirect(url_for('dashboard'))
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -69,7 +75,7 @@ def dashboard():
 
         # Ensure title and content are provided
         if not title or not content:
-                        return "Title and content are required."
+            return "Title and content are required."
 
         recipes_collection.insert_one({
             'user_id': session['user_id'],
@@ -124,6 +130,3 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
-
-
-
