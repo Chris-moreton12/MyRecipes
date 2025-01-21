@@ -1,5 +1,13 @@
-<!-- Existing code... -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
 
+<body>
 <form action="/login" method="post">
     <h2>Login</h2>
     {% if error %}
@@ -16,5 +24,7 @@
     <button type="submit" class="btn">Login</button>
 </form>
 
-<!-- Add the link to signup page -->
+<!-- Adds the link to signup page -->
 <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+
+</body>
