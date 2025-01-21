@@ -6,3 +6,20 @@ body {
     padding: 0;
 }
 
+/* Page Title */
+.page-title {
+    font-size: 2.5em;
+    color: #ff6347;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container for login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
