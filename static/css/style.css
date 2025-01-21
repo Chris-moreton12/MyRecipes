@@ -23,3 +23,21 @@ body {
     height: 100vh;
     flex-direction: column;
 }
+
+/* Style for all forms */
+form {
+    background: white;
+    padding: 3em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(1, 1, 1, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Ensures delete button is not targeted by form styling */
+.delete-form {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}

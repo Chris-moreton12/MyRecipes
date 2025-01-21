@@ -43,7 +43,9 @@
                         <p>{{ recipe['content'] }}</p>
                         <div class="actions">
                             <a href="{{ url_for('edit_recipe', recipe_id=recipe['_id']) }}" class="btn btn-edit">Edit</a>
-                            <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe['_id']) }}" style="display: inline;">
+
+                            <!-- Delete Form Button -->
+                            <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe['_id']) }}" class="delete-form" style="display: inline;">
                                 <button type="submit" class="btn btn-delete">Delete</button>
                             </form>
                         </div>
