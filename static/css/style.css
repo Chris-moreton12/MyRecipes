@@ -134,3 +134,41 @@ form .btn:hover {
     white-space: pre-line;
     margin: 0.5em 0;
 }
+
+.create-recipe form {
+    margin-top: 1em;
+}
+
+.create-recipe .form-group {
+    margin-bottom: 1em;
+}
+
+/* Styles the titles on create recipe block */
+.create-recipe label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.recipe-list .actions {
+    margin-top: 1em;
+}
+
+.recipe-list .actions .btn {
+    text-decoration: none;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+/* Give the edit button some style */
+.recipe-list .actions .btn-edit {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+.recipe-list .actions .btn-edit:hover {
+    background-color: #0056b3;
+}
