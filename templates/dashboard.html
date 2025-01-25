@@ -17,6 +17,13 @@
     <div class="dashboard-container">
         <h2>Welcome, {{ username }}</h2>
 
+        <!-- Search Feature -->
+        <section class="search-recipe">
+            <h3>Search for a Recipe</h3>
+            <input type="text" id="searchInput" placeholder="Enter recipe title">
+            <button class="btn btn-search" onclick="searchRecipe()">Search</button>
+        </section>
+
         <!-- Create Recipe Form -->
         <section class="create-recipe">
             <h3>Create a New Recipe</h3>
@@ -54,5 +61,10 @@
             </ul>
         </section>
     </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script/search.js') }}"></script>
+
+
 </body>
 </html>
