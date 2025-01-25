@@ -172,3 +172,34 @@ form .btn:hover {
 .recipe-list .actions .btn-edit:hover {
     background-color: #0056b3;
 }
+
+/* Search Recipe Section */
+.search-recipe {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.search-recipe input[type="text"] {
+    width: 80%;
+    padding: 0.6em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.search-recipe .btn-search {
+    padding: 0.6em 1.5em;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.search-recipe .btn-search:hover {
+    background-color: #0056b3;
+}
