@@ -71,12 +71,23 @@ def login():
 
     return render_template('login.html')
 
+# Reset password link
 @app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
     if request.method == 'POST':
         username = request.form['username']
         answer_1 = request.form['security_question_1']
         answer_2 = request.form['security_question_2']
+
+        # Fetch user and validate the security questions
+        user = users_collection.find_one({'username': username})
+        if user and user['security_question_1'] == answer_1 and user['security_question_2'] == answer_2:
+            # Allow the user to reset their password
+            return redirect(url_for('reset_password', username=username))
+        else:
+            return "Incorrect security answers."
+
+    return render_template('forgot_password.html')
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
