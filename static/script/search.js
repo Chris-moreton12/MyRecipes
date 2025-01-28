@@ -1,7 +1,6 @@
 function searchRecipe() {
     const searchValue = document.getElementById("searchInput").value.toLowerCase();
     const recipes = document.querySelectorAll(".recipe-item");
-}
 
 let found = false;
 recipes.forEach(recipe => {
@@ -13,3 +12,20 @@ recipes.forEach(recipe => {
         found = true;
     }
 });
+
+if (!found) {
+    alert("No matching recipe found!");
+}
+}
+
+// Function to apply the flash effect to a matching recipe item
+function flashRecipe(recipe) {
+    recipe.classList.add("flash");
+
+    // Remove the flash effect after 1 second (1000ms)
+    setTimeout(function() {
+        recipe.classList.remove("flash");
+    }, 1000);
+}
+
+
