@@ -203,3 +203,24 @@ form .btn:hover {
 .search-recipe .btn-search:hover {
     background-color: #0056b3;
 }
+
+
+/* Flashing effect for the recipe item when searched */
+.flash {
+    background-color: #ffcc00;
+    animation: flashEffect 1s ease-in-out; /* Trigger the animation */
+}
+
+/* Keyframe animation for the flashing effect */
+@keyframes flashEffect {
+    0% {
+        background-color: #ffcc00;
+    }
+    50% {
+        background-color: #ff6f00;
+    }
+    100% {
+        background-color: #ffcc00;
+    }
+}
+
