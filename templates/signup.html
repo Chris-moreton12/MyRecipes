@@ -9,14 +9,22 @@
 <body>
     <h1>Sign Up</h1>
     <div class="login-container">
-    <form action="{{ url_for('signup') }}" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br><br>
-        <button type="submit">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
-</div>
+        <form action="{{ url_for('signup') }}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required><br><br>
+            
+            <label for="security-question-1">Security Question 1: What is your favorite color?</label>
+            <input type="text" name="security_question_1" id="security-question-1" placeholder="Your answer" required><br><br>
+            
+            <label for="security-question-2">Security Question 2: What city were you born in?</label>
+            <input type="text" name="security_question_2" id="security-question-2" placeholder="Your answer" required><br><br>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
 </body>
 </html>
