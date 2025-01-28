@@ -76,6 +76,7 @@ def login():
 # Reset password link
 @app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
+    error = None
     if request.method == 'POST':
         username = request.form['username']
         answer_1 = request.form['security_question_1']
@@ -87,9 +88,9 @@ def forgot_password():
             # Allow the user to reset their password
             return redirect(url_for('reset_password', username=username))
         else:
-            return "Incorrect security answers."
+            error = "Incorrect username or security answers. Please try again."
 
-    return render_template('forgot_password.html')
+    return render_template('forgot_password.html' , error=error)
 
 # Added functionality to reset the password after validating security questions
 @app.route('/reset_password/<username>', methods=['GET', 'POST'])
