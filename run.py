@@ -53,6 +53,8 @@ def signup():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    error = None
+
     if 'user_id' in session:  # Redirect if already logged in
         return redirect(url_for('dashboard'))
 
@@ -67,9 +69,9 @@ def login():
             session['username'] = username
             return redirect(url_for('dashboard'))
 
-        return "Invalid username or password."
+        error = "Invalid username or password. Please try again."
 
-    return render_template('login.html')
+    return render_template('login.html', error=error)
 
 # Reset password link
 @app.route('/forgot_password', methods=['GET', 'POST'])
