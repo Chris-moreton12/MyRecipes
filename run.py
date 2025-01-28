@@ -71,6 +71,14 @@ def login():
 
     return render_template('login.html')
 
+@app.route('/forgot_password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        username = request.form['username']
+        answer_1 = request.form['security_question_1']
+        answer_2 = request.form['security_question_2']
+
+
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     if 'user_id' not in session:
