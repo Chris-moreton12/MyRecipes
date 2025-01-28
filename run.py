@@ -27,6 +27,9 @@ def signup():
         username = request.form['username']
         password = request.form['password']
 
+        security_question_1 = request.form['security_question_1']
+        security_question_2 = request.form['security_question_2']
+
         # Validate the username and password
         if len(username) < 3 or len(password) < 6:
             return "Username must be at least 3 characters and password must be at least 6 characters."
@@ -38,7 +41,12 @@ def signup():
             return "Username already exists. Please choose another."
 
         # Insert the new user into the database
-        users_collection.insert_one({'username': username, 'password': hashed_password})
+        users_collection.insert_one({
+            'username': username,
+            'password': hashed_password,
+            'security_question_1': security_question_1,
+            'security_question_2': security_question_2
+        })
         return redirect(url_for('login'))
 
     return render_template('signup.html')
