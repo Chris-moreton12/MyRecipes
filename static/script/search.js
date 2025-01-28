@@ -2,6 +2,11 @@ function searchRecipe() {
     const searchValue = document.getElementById("searchInput").value.toLowerCase();
     const recipes = document.querySelectorAll(".recipe-item");
 
+        // Clear any existing highlights and flashes
+        recipes.forEach(recipe => {
+            recipe.classList.remove("highlight", "flash");
+        });
+
 let found = false;
 recipes.forEach(recipe => {
     const title = recipe.querySelector("h4").textContent.toLowerCase();
