@@ -89,6 +89,22 @@ def forgot_password():
 
     return render_template('forgot_password.html')
 
+# Added functionality to reset the password after validating security questions
+@app.route('/reset_password/<username>', methods=['GET', 'POST'])
+def reset_password(username):
+    if request.method == 'POST':
+        new_password = request.form['new_password']
+
+        # Update the user's password
+        hashed_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
+        users_collection.update_one(
+            {'username': username},
+            {'$set': {'password': hashed_password}}
+        )
+        return redirect(url_for('login'))
+
+    return render_template('reset_password.html', username=username)
+
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
