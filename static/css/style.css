@@ -150,6 +150,13 @@ form .btn:hover {
     flex-direction: column;
 }
 
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .recipe-list ul {
+        grid-template-columns: 1fr; /* Stacks 1 recipe per row on smaller screens */
+    }
+}
+
 /* Preserve line breaks as they are when inputted */
 .recipe-item p {
     white-space: pre-line;
