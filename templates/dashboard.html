@@ -13,9 +13,9 @@
             <a href="{{ url_for('logout') }}" class="btn btn-signout">Sign Out</a>
         </div>
     </header>
-
     <div class="dashboard-container">
         <h2>Welcome, {{ username }}</h2>
+        <a href="#create-recipe-section" class="btn-create-recipe">Create New Recipe</a>
 
         <!-- Search Feature -->
         <section class="search-recipe">
@@ -24,47 +24,49 @@
             <button class="btn btn-search" onclick="searchRecipe()">Search</button>
         </section>
 
-        <!-- Create Recipe Form -->
-        <section class="create-recipe">
-            <h3>Create a New Recipe</h3>
-            <form method="POST" action="{{ url_for('dashboard') }}">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" placeholder="Enter recipe title" required>
-                </div>
-                <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea id="content" name="content" placeholder="Enter recipe details" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-create">Add Recipe</button>
-            </form>
-        </section>
+        <!-- Main Content Layout -->
+        <div class="main-content">
+            <!-- Recipe List -->
+            <section class="recipe-list">
+                <h3>Your Recipes</h3>
+                <ul>
+                    {% for recipe in recipes %}
+                        <li class="recipe-item">
+                            <h4>{{ recipe['title'] }}</h4>
+                            <p>{{ recipe['content'] }}</p>
+                            <div class="actions">
+                                <a href="{{ url_for('edit_recipe', recipe_id=recipe['_id']) }}" class="btn btn-edit">Edit</a>
 
-        <!-- Recipe List -->
-        <section class="recipe-list">
-            <h3>Your Recipes</h3>
-            <ul>
-                {% for recipe in recipes %}
-                    <li class="recipe-item">
-                        <h4>{{ recipe['title'] }}</h4>
-                        <p>{{ recipe['content'] }}</p>
-                        <div class="actions">
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe['_id']) }}" class="btn btn-edit">Edit</a>
+                                <!-- Delete Form Button -->
+                                <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe['_id']) }}" class="delete-form">
+                                    <button type="submit" class="btn btn-delete">Delete</button>
+                                </form>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
 
-                            <!-- Delete Form Button -->
-                            <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe['_id']) }}" class="delete-form" style="display: inline;">
-                                <button type="submit" class="btn btn-delete">Delete</button>
-                            </form>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </section>
+            <!-- Create Recipe Form  -->
+            <section id ="create-recipe-section" class="create-recipe">
+                <h3>Create a New Recipe</h3>
+                <form method="POST" action="{{ url_for('dashboard') }}">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" placeholder="Enter recipe title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea id="content" name="content" placeholder="Enter recipe details" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-create">Add Recipe</button>
+                </form>
+            </section>
+        </div>
     </div>
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='script/search.js') }}"></script>
-
 
 </body>
 </html>
