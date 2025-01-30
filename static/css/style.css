@@ -55,11 +55,11 @@ body {
 /* General form styling */
 form {
     background: white;
-    padding: 3em;
+    padding: 1em;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(1, 1, 1, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     margin: 0 auto;
 }
 
@@ -97,7 +97,7 @@ form .btn {
     display: inline-block;
     background-color: #4CAF50;
     color: white;
-    padding: 0.8em 1.5em;
+    padding: 0.6em 1em;
     text-align: center;
     text-decoration: none;
     font-size: 1em;
@@ -127,6 +127,17 @@ form .btn:hover {
 
 .recipe-list .recipe-item h4 {
     margin: 0 0 0.5em;
+}
+
+
+/* Recipe List Styling - Change to grid layout */
+.recipe-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 20px;
+    margin: 0;
 }
 
 /* Preserve line breaks as they are when inputted */
@@ -242,3 +253,8 @@ form .btn:hover {
 .btn-create-recipe:hover {
     background-color: #218838; /* Darker green when hovered */
 }
+
+
+
+
+
