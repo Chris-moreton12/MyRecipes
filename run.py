@@ -23,33 +23,33 @@ def signup():
     if 'user_id' in session:  # Redirect if already logged in
         return redirect(url_for('dashboard'))
 
+    error = None
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
         security_question_1 = request.form['security_question_1']
         security_question_2 = request.form['security_question_2']
 
         # Validate the username and password
-        if len(username) < 3 or len(password) < 6:
-            return "Username must be at least 3 characters and password must be at least 6 characters."
+        if len(username) < 3:
+            error = "Username must be at least 3 characters long."
+        elif len(password) < 6:
+            error = "Password must be at least 6 characters long."
+        elif users_collection.find_one({'username': username}):
+            error = "Username already exists. Please choose another."
+        else:
+            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+            # Insert the new user into the database
+            users_collection.insert_one({
+                'username': username,
+                'password': hashed_password,
+                'security_question_1': security_question_1,
+                'security_question_2': security_question_2
+            })
+            return redirect(url_for('login'))
 
-        # Check if the username already exists
-        if users_collection.find_one({'username': username}):
-            return "Username already exists. Please choose another."
-
-        # Insert the new user into the database
-        users_collection.insert_one({
-            'username': username,
-            'password': hashed_password,
-            'security_question_1': security_question_1,
-            'security_question_2': security_question_2
-        })
-        return redirect(url_for('login'))
-
-    return render_template('signup.html')
+    return render_template('signup.html', error=error)  # Pass error message to the template
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
