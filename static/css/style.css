@@ -140,6 +140,16 @@ form .btn:hover {
     margin: 0;
 }
 
+/* Recipe Items Styling */
+.recipe-item {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Preserve line breaks as they are when inputted */
 .recipe-item p {
     white-space: pre-line;
