@@ -294,3 +294,18 @@ form .btn:hover {
 .btn-create-recipe:hover {
     background-color: #218838; /* Darker green when hovered */
 }
+
+/* Adjust signout button size on Galaxy S8 and Z Fold 5 */
+@media (max-width: 360px) {
+    .btn-signout {
+        font-size: 0.8em;
+        padding: 0.4em 0.8em;
+    }
+}
+
+@media (max-width: 344px) {
+    .btn-signout {
+        font-size: 0.6em;
+        padding: 0.4em 0.6em;
+    }
+}
