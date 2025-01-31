@@ -90,3 +90,47 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 - My signup and login pages are relatively small in terms of layout so they will look similar if not the same from a mobile view. The dashboard howeevr will require a different layout.
 
 ![Dashboard Phone Wireframe](documentation/wireframes/dashboard-phone.png)
+
+## Features
+
+### Existing Features
+
+-**Login Page**
+
+- The login page is a simple one box for a form that allows the user to type theur username and password to click a button to login.
+
+![Login Page](documentation/screenshots/login.png)
+
+![Login Page Phone View](documentation/screenshots/login-phone.png)
+
+-**Signup Page**
+
+- The signup page allows the user to set their own username and password as well as two security answers, this page will flag up usernames that already exist and only allow the user to set a username and password above a certain length. Don't forget that when setting security answers, it is case sensitive.
+
+![Signup Page](documentation/screenshots/signup.png)
+
+![Signup Page Phone View](documentation/screenshots/signup-phone.png)
+
+-**Forgot Password Page**
+
+- This page allows the user to get to the reset password page by typing in their username and security question answers.
+
+![Forgot Password Page](documentation/screenshots/forgot.png)
+
+![Forgot Password Phone View](documentation/screenshots/forgot-phone.png)
+
+-**Reset Password Page**
+
+- This page allows the user to reet thir password which will then be updated automatically to allow the user to sign in with their new passord.
+
+![Reset Password Page](documentation/screenshots/reset.png)
+
+![Reset Password Phone View](documentation/screenshots/reset-phone.png)
+
+-**Dashboard Page**
+
+- This page allows the user to log and store new recipes as well as edit and delete them. The user can sign out and can create new recipes with an add recipe form.
+
+![Dashboard Page](documentation/screenshots/dashboard-snap.png)
+
+![Dashboard Phone View](documentation/screenshots/dashbord-snap-phone.png)
