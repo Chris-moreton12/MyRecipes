@@ -55,3 +55,32 @@ For the body text, I used Open Sans, a highly readable sans-serif font. Its simp
 
 **Fallback Font: Sans-serif**
 In the event that the primary fonts are unavailable, I’ve set a fallback to sans-serif. This ensures that the text remains clean, simple, and easy to read across all devices, maintaining a consistent user experience.
+
+## User Stories
+
+### New Site Users
+
+- As a new site user, I want to create an account, so that I can store and organize my recipes securely.
+- As a new site user, I want to add my favorite recipes, so that I can easily refer back to them later.
+- As a new site user, I want to search for recipes by name, so that I can find recipes that I have previously stored.
+- As a new site user, I want to easily manage my recipes and delete the old ones I no longer require.
+
+### Returning Users 
+
+- As a returning user, I want to log into my account, so that I can access my personal recipe collection.
+- As a returning user, I want to update a recipe with changes I made or improvements I discovered, so that I can keep my recipes up to date.
+- As a returning user, I want to delete or archive recipes that I no longer want to keep, so that my collection stays organized and relevant.
+- As a returning user, I want to be able to change my password if i somehow forgot my original.
+
+## Wireframes
+
+In order for best practices to be used, I developed wireframes to potray what the website should look like, I have included desktop and mobile view for frames that require a different layout due to sizing for mobile view.
+I have used [Wireframe](https://wireframe.cc) to design the wireframes for my site.
+
+### Desktop Wireframes
+
+![Home Page Dashboard Wireframe](documentation/wireframes/dashboard.png)
+
+![Login Page Wireframe](documentation/wireframes/login-page.png)
+
+![Sign Up Page Wireframe](documentation/wireframes/signu-page.png)
