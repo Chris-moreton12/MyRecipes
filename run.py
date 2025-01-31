@@ -20,7 +20,7 @@ recipes_collection = db['recipes']
 # Stack overflow was used to assist with the code throughout the run.py, code edited from stack overflow.
 @app.route('/')
 def home():
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))  # Changed to redirect to 'index' instead of 'login'
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -94,7 +94,7 @@ def forgot_password():
         else:
             error = "Incorrect username or security answers. Please try again."
 
-    return render_template('forgot_password.html' , error=error)
+    return render_template('forgot_password.html', error=error)
 
 # Added functionality to reset the password after validating security questions
 @app.route('/reset_password/<username>', methods=['GET', 'POST'])
@@ -111,7 +111,6 @@ def reset_password(username):
         return redirect(url_for('login'))
 
     return render_template('reset_password.html', username=username)
-
 
 @app.route('/index', methods=['GET', 'POST'])
 def index():
