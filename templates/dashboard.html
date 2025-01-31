@@ -14,6 +14,7 @@
             <a href="{{ url_for('logout') }}" class="btn btn-signout">Sign Out</a>
         </div>
     </header>
+
     <div class="dashboard-container">
         <h2>Welcome, {{ username }}</h2>
         <a href="#create-recipe-section" class="btn-create-recipe">Create New Recipe</a>
@@ -37,7 +38,6 @@
                             <p>{{ recipe['content'] }}</p>
                             <div class="actions">
                                 <a href="{{ url_for('edit_recipe', recipe_id=recipe['_id']) }}" class="btn btn-edit">Edit</a>
-
                                 <!-- Delete Form Button -->
                                 <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe['_id']) }}" class="delete-form">
                                     <button type="submit" class="btn btn-delete">Delete</button>
@@ -48,8 +48,8 @@
                 </ul>
             </section>
 
-            <!-- Create Recipe Form  -->
-            <section id ="create-recipe-section" class="create-recipe">
+            <!-- Create Recipe Form -->
+            <section id="create-recipe-section" class="create-recipe">
                 <h3>Create a New Recipe</h3>
                 <form method="POST" action="{{ url_for('dashboard') }}">
                     <div class="form-group">
@@ -68,6 +68,5 @@
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='script/search.js') }}"></script>
-
 </body>
 </html>

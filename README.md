@@ -136,3 +136,61 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 
 ![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone.png)
 ![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone-bottom.png)
+
+### Future Features 
+
+- Recipe Image Upload:
+   - Allow users to upload images for their recipes to visually enhance their recipe posts.
+- Recipe Sharing with Friends:
+   - Enable users to connect with friends, view their recipes, and share their own recipe 
+     creations.
+- Ingredient & Method Sections:
+   - Create separate, clearly labeled sections for users to add ingredients and cooking 
+     methods. This will ensure a more structured and organized layout for recipes, making it 
+     easier for users to follow the steps.
+- Animated or Background Images for the site:
+   - Implement an animated or static background image to the site to make it more user friendly and visually appealing.
+
+## Tools & Technologies Used
+
+**Frontend Technologies**
+- HTML: The standard markup language for creating web pages.
+- CSS: For styling and designing the layout of the web pages.
+- JavaScript: For adding interactivity with the flashing effect.
+- Google Fonts: To import custom fonts like Lobster, Montserrat, and Open Sans for typography.
+- Media Queries: For responsive design to ensure the application works well on various screen 
+  sizes, such as tablets and mobile devices.
+
+**Backend Technologies**
+- Python: Programming language used for backend development.
+- Flask: A lightweight Python web framework for building the backend and handling routing.
+- MongoDB: NoSQL database used for storing recipe data, user information, and other       
+  site-related content.
+- PyMongo: Python library for interacting with MongoDB.
+- bcrypt: A library used for hashing passwords securely.
+
+**Deployment and Hosting**
+- Heroku: Cloud platform for deploying and hosting the web application.
+- Git & GitHub: Version control system for managing the codebase and collaboration.
+- GitHub Actions: For automating deployment processes, pushing code to Heroku.
+
+**Debugging and Validation Tools**
+- ChatGPT: Used as a tool for helping with debugging and resolving issues.
+- Google Lighthouse: For performance, accessibility, SEO, and best practices audits.
+- CSS Validator: For validating and ensuring the correct usage of CSS syntax and styles.
+- HTML Validator: For validating HTML code to ensure it meets web standards and is error-free.
+- Python Validator: To validate Python code and ensure it adheres to best practices.
+
+
+## Validation 
+
+**HTML Validation**
+- The html code validator brings up multipe errors which are of no concern. These errors are flagging due to the browser only running hmtl without being redereed through flasks tmplate engine. The {{ url_for() }} syntax is part of Flask's template rendering system, which means this code will only work correctly when your HTML files are rendered through Flask's template engine.
+
+**CSS Validator**
+![CSS Validator](documentation/screenshots/css.png)
+- There have been no erros detected in the CSS code.
+
+**Python Validator**
+![Phython Validator](documentation/screenshots/python.png)
+- There have been no errors detected in the python code.
