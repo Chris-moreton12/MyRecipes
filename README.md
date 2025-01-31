@@ -27,13 +27,31 @@ The project also introduces personalized user authentication, giving users the a
 
 The chosen color palette is designed to create a visually engaging and user-friendly experience while maintaining a clean and modern look. The combination of contrasting colors ensures clear readability, intuitive navigation, and an aesthetically pleasing interface that enhances the overall usability of the application.
 
-**1. Background Colors (#343a40, #69aaf9):
+**1. Background Colors (#343a40, #69aaf9):**
 The dark grey header (#343a40) provides a strong and structured feel, creating a sense of focus and organization. In contrast, the vibrant blue background (#69aaf9) adds a fresh and inviting atmosphere, making the interface feel approachable and easy to navigate.
 
-**2. Action Buttons (#dc3545, #4CAF50, #007bff):
+**2. Action Buttons (#dc3545, #4CAF50, #007bff):**
 Key actions are color-coded to improve usability. The red (#dc3545) is used for actions requiring caution, such as "delete," ensuring users can easily distinguish critical functions. The green (#4CAF50) is used for positive actions like saving or submitting, reinforcing a sense of confirmation. Blue (#007bff) highlights interactive elements like editing, making them easily identifiable.
 
-**3. Text & Highlight Colors (#fff, #ff6347, #eeecec):
+**3. Text & Highlight Colors (#fff, #ff6347, #eeecec):**
 White (#fff) text is used against dark backgrounds to maximize readability. Titles and key elements feature a striking coral shade (#ff6347), adding a dynamic and engaging touch. The soft grey (#eeecec) in recipe cards ensures content remains clear and easy to read without overwhelming the user.
 
 By combining bold contrast with subtle highlights, this color scheme creates an intuitive and visually appealing experience while maintaining clarity and ease of use.
+
+### Typography
+
+For this project, I selected a combination of Google Fonts that prioritize readability and modern aesthetics. The chosen fonts create a clear visual hierarchy and contribute to a user-friendly experience, ensuring that content is easily digestible while maintaining a clean and contemporary look.
+
+**Heading Typography**
+
+**H1 [Lobster](https://fonts.google.com/specimen/Lobster)**
+I used Lobster for the main title (H1) to give it a bold, playful touch. The cursive design adds character and makes the title stand out in a unique way, giving the page an engaging and inviting feel.
+
+**Subheadings [H2-H6: Montserrat](https://fonts.google.com/specimen/Montserrat)**
+Montserrat was chosen for subheadings due to its clean and modern design. It’s easy to read and structured, ensuring the content is well-organized while maintaining a professional and polished appearance.
+
+**Body Text [Open Sans](https://fonts.google.com/specimen/Open+Sans)**
+For the body text, I used Open Sans, a highly readable sans-serif font. Its simple and neutral design ensures clarity and legibility, making it ideal for longer text content and enhancing the overall user experience.
+
+**Fallback Font: Sans-serif**
+In the event that the primary fonts are unavailable, I’ve set a fallback to sans-serif. This ensures that the text remains clean, simple, and easy to read across all devices, maintaining a consistent user experience.
