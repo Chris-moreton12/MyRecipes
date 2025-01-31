@@ -194,3 +194,48 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 **Python Validator**
 ![Phython Validator](documentation/screenshots/python.png)
 - There have been no errors detected in the python code.
+
+## Database Design
+### MongoDB Non-Relational Database
+
+This project uses [MongoDB](https://www.mongodb.com) for the Non-Relational Database.
+
+My project uses a non-relational database (MongoDB), the database doesn't have any actual relationships like a relational database would.
+
+- My databse consists of 2 collections, users and recipes. THe database stores the users information and hashes the password to keep it confidential. The user recipes are added and delted from the database when the user does so.
+
+## Testing
+
+- Testing for this project was completed manually. Testing was done after every new feature was implemented. This made sure I was aware if the new added feature was working correclty.
+
+## Deployment
+### Heroku 
+
+The live deployed application can be found deployed on [Heroku](https://herokuapp.com).
+
+Heroku requies three additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+- runtime.txt
+
+
+### Bugs
+. Database Connection Issues
+- Problem: Couldn’t connect to MongoDB.
+- Fix: Double-check connection string, ensure environment variables for MongoDB URI are set correctly, and confirm the database is accessible.
+- Problem: Paths for incorrect login details took the user to seperate page with no return button.
+- Fix: Ensure the comments for users incorrect details were displayed on the same page bu editing th file paths and adding an in page error.
+- Problem: The layout didn’t look as expected on different devices (e.g., buttons were too large or text was misaligned).
+- Fix: Used media queries to adjust the layout for smaller screens.
+- Problem: Some pages were not loading or throwing errors.
+- Fix: Check route definitions and make sure templates are correctly rendered. Also, ensure 
+  assets like CSS and JS files are properly linked, ensure the python link has somewhere to link to.
+- Problem: CSS actions not editiing in real time viewing.
+- Fix: Clear browser history and cookies and hard refresh page.
+
+### Acknowledgements
+
+- I would like to thank my tutor Miguel Ortega for allowing an extension due to being in full time employment.
+- I would like to thank my mentor Sheryl Goldberg for assisting me with the development of this project, offering insight into the websites layout and functions. 
+
