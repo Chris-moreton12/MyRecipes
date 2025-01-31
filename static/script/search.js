@@ -6,7 +6,9 @@ function searchRecipe() {
         recipes.forEach(recipe => {
             recipe.classList.remove("highlight", "flash");
         });
-
+/* https://stackoverflow.com/questions/70998906/how-do-i-access-each-item-of-an-array-stored-in-local-storage-individually
+   Stack overflow was used to aid with the flashing effect and retriving the recipe
+*/
 let found = false;
 recipes.forEach(recipe => {
     const title = recipe.querySelector("h4").textContent.toLowerCase();

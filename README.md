@@ -3,7 +3,7 @@
 
 # Project Overview
 
-[MyRecipeApp](https:.herokuapp.com) is a [Flask](https://flask.palletsprojects.com/en/stable/)-based [CRUD](https://www.codecademy.com/article/what-is-crud) application that lets users manage their recipe collection with ease of use. Users can create secure accounts or log in using hashed passwords powered by [bcrypt](https://flask-bcrypt.readthedocs.io/en/1.0.1/), and perform actions like adding, editing, deleting, and searching for recipes that havebeen stored in a [MongoDB](https://www.mongodb.com/) database. The app features a dynamic and responsive interface styled with custom css, while [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) enhances interactivity by animating the flashing effect when searching for recipes. My Reciep App allows for an intuitive experience for managing your recipes in a secure account authenticated by a password and data that is managed in a collection. This allows for posiitve user experiences and ease of use.
+[MyRecipeApp](https://my-recipes-app-6ea7c43fa6df.herokuapp.com/login) is a [Flask](https://flask.palletsprojects.com/en/stable/)-based [CRUD](https://www.codecademy.com/article/what-is-crud) application that lets users manage their recipe collection with ease of use. Users can create secure accounts or log in using hashed passwords powered by [bcrypt](https://flask-bcrypt.readthedocs.io/en/1.0.1/), and perform actions like adding, editing, deleting, and searching for recipes that havebeen stored in a [MongoDB](https://www.mongodb.com/) database. The app features a dynamic and responsive interface styled with custom css, while [JavaScript](https://www.w3schools.com/js/DEFAULT.asp) enhances interactivity by animating the flashing effect when searching for recipes. My Reciep App allows for an intuitive experience for managing your recipes in a secure account authenticated by a password and data that is managed in a collection. This allows for posiitve user experiences and ease of use.
 
 **Key Features:**
 - User Authentication & Security: Leverages Flask-Bcrypt for secure password hashing and implements a safe login and registration process.
@@ -189,6 +189,7 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 - CSS Validator: For validating and ensuring the correct usage of CSS syntax and styles.
 - HTML Validator: For validating HTML code to ensure it meets web standards and is error-free.
 - Python Validator: To validate Python code and ensure it adheres to best practices.
+- Stack overflow was used to asssit with some code, code edited from stack overflow
 
 
 ## Validation 

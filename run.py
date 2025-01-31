@@ -9,11 +9,15 @@ app.secret_key = os.urandom(24)  # Secures random secret key for sessions
 bcrypt = Bcrypt(app)
 
 # MongoDB connection string 
+# https://www.mongodb.com/docs/manual/reference/connection-string/?msockid=235f5308c2056580386f4178c60563e0
+# Mongodb helped with installing a connection string to my python to allow for a database to be connected.
 client = MongoClient('mongodb+srv://Chris:Cmoreton3912@myrecipe.95tdx.mongodb.net/recipe_app?retryWrites=true&w=majority&appName=Myrecipe')
 db = client['recipe_app']
 users_collection = db['users']
 recipes_collection = db['recipes']
 
+#https://stackoverflow.com/questions/36269485/how-do-i-pass-through-the-next-url-with-flask-and-flask-login
+# Stack overflow was used to assist with the code throughout the run.py, code edited from stack overflow.
 @app.route('/')
 def home():
     return redirect(url_for('login'))
