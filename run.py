@@ -25,7 +25,7 @@ def home():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if 'user_id' in session:  # Redirect if already logged in
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('index'))
 
     error = None
     if request.method == 'POST':
@@ -60,7 +60,7 @@ def login():
     error = None
 
     if 'user_id' in session:  # Redirect if already logged in
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('index'))
 
     if request.method == 'POST':
         username = request.form['username']
@@ -71,7 +71,7 @@ def login():
         if user and bcrypt.check_password_hash(user['password'], password):
             session['user_id'] = str(user['_id'])
             session['username'] = username
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('index'))
 
         error = "Invalid username or password. Please try again."
 
@@ -113,8 +113,8 @@ def reset_password(username):
     return render_template('reset_password.html', username=username)
 
 
-@app.route('/dashboard', methods=['GET', 'POST'])
-def dashboard():
+@app.route('/index', methods=['GET', 'POST'])
+def index():
     if 'user_id' not in session:
         return redirect(url_for('login'))
 
@@ -135,7 +135,7 @@ def dashboard():
 
     # Retrieve all recipes for the logged-in user
     user_recipes = recipes_collection.find({'user_id': session['user_id']})
-    return render_template('dashboard.html', username=session['username'], recipes=user_recipes)
+    return render_template('index.html', username=session['username'], recipes=user_recipes)
 
 @app.route('/edit/<recipe_id>', methods=['GET', 'POST'])
 def edit_recipe(recipe_id):
@@ -160,7 +160,7 @@ def edit_recipe(recipe_id):
             {'_id': ObjectId(recipe_id), 'user_id': session['user_id']},
             {'$set': {'title': new_title, 'content': new_content}}
         )
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('index'))
 
     return render_template('edit.html', recipe=recipe)
 
@@ -171,7 +171,7 @@ def delete_recipe(recipe_id):
 
     # Delete the recipe
     recipes_collection.delete_one({'_id': ObjectId(recipe_id), 'user_id': session['user_id']})
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():
