@@ -134,5 +134,5 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 ![Dashboard Page](documentation/screenshots/dashboard-snap.png)
 ![Dashboard Page](documentation/screenshots/dashboard-snap-bottom.png)
 
-![Dashboard Phone View](documentation/screenshots/dashbord-snap-phone.png)
-![Dashboard Phone View](documentation/screenshots/dashbord-snap-phone-bottom.png)
+![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone.png)
+![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone-bottom.png)
