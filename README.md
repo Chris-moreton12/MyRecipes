@@ -83,4 +83,10 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 
 ![Login Page Wireframe](documentation/wireframes/login-page.png)
 
-![Sign Up Page Wireframe](documentation/wireframes/signu-page.png)
+![Sign Up Page Wireframe](documentation/wireframes/signup-page.png)
+
+### Mobile Wireframe
+
+- My signup and login pages are relatively small in terms of layout so they will look similar if not the same from a mobile view. The dashboard howeevr will require a different layout.
+
+![Dashboard Phone Wireframe](documentation/wireframes/dashboard-phone.png)
