@@ -132,5 +132,7 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 - This page allows the user to log and store new recipes as well as edit and delete them. The user can sign out and can create new recipes with an add recipe form.
 
 ![Dashboard Page](documentation/screenshots/dashboard-snap.png)
+![Dashboard Page](documentation/screenshots/dashboard-snap-bottom.png)
 
 ![Dashboard Phone View](documentation/screenshots/dashbord-snap-phone.png)
+![Dashboard Phone View](documentation/screenshots/dashbord-snap-phone-bottom.png)
