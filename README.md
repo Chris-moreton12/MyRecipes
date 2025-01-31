@@ -1,4 +1,4 @@
-# [MyRecipeApp: Personal Recipe Collection App](https.herokuapp.com)
+# [MyRecipeApp: Personal Recipe Collection App](https://my-recipes-app-6ea7c43fa6df.herokuapp.com/login)
 
 
 # Project Overview
@@ -13,9 +13,6 @@
 - MongoDB Integration: Utilizes MongoDB to store and manage user and recipe data, ensuring scalability and performance.
 - Role-Based Access Control: Ensures secure access with session management, limiting recipe modifications to authenticated users.
 - Responsive & Accessible Design: Built with a mobile-first approach, ensuring seamless navigation on all devices with a clean and modern UI.
-
-
-![amIresponsive: MyRecipeApp](documentation/screenshots/.png)
 
 ## UX
 
@@ -137,6 +134,18 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 ![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone.png)
 ![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone-bottom.png)
 
+### User Testing
+
+- Users were asked to create and account, all users passed this test
+- Users were asked to create a new recipe, all users passed this test
+- Users were asked to try and restet their password, all users passed this test
+
+### User Feedback 
+
+- I would like to be able to store ingredients and methods seperately
+- I would like to be able to add pictures to my recipes
+- I would like to be able to see my friends recipes
+
 ### Future Features 
 
 - Recipe Image Upload:
@@ -188,12 +197,21 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 - The html code validator brings up multipe errors which are of no concern. These errors are flagging due to the browser only running hmtl without being redereed through flasks tmplate engine. The {{ url_for() }} syntax is part of Flask's template rendering system, which means this code will only work correctly when your HTML files are rendered through Flask's template engine.
 
 **CSS Validator**
-![CSS Validator](documentation/screenshots/css.png)
+![CSS Validator](documentation/testing/css.png)
 - There have been no erros detected in the CSS code.
 
 **Python Validator**
-![Phython Validator](documentation/screenshots/python.png)
+![Phython Validator](documentation/testing/python.png)
 - There have been no errors detected in the python code.
+
+### Lighthouse testing
+
+![Lighthouse test](documentation/testing/lighthouse-testing.png)
+- This test flagged up only a couple of potential fixes, this included contrasting colors and no meta description, meta description was added however there has been no color edits due to the colors being favoured by website users.
+
+![SEO test](documentation/testing/seo.png)
+
+![Accessibility test](documentation/testing/accessibility.png)
 
 ## Database Design
 ### MongoDB Non-Relational Database
@@ -211,13 +229,13 @@ My project uses a non-relational database (MongoDB), the database doesn't have a
 ## Deployment
 ### Heroku 
 
-The live deployed application can be found deployed on [Heroku](https://herokuapp.com).
+The live deployed application can be found deployed on [Heroku](https://my-recipes-app-6ea7c43fa6df.herokuapp.com/login).
 
 Heroku requies three additional files in order to deploy properly.
 
 - requirements.txt
 - Procfile
-- runtime.txt
+- .python-version
 
 
 ### Bugs
