@@ -182,6 +182,7 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 - Heroku: Cloud platform for deploying and hosting the web application.
 - Git & GitHub: Version control system for managing the codebase and collaboration.
 - GitHub Actions: For automating deployment processes, pushing code to Heroku.
+- VS code: Migrated to VS code during production.
 
 **Debugging and Validation Tools**
 - ChatGPT: Used as a tool for helping with debugging and resolving issues.
@@ -252,6 +253,8 @@ Heroku requies three additional files in order to deploy properly.
   assets like CSS and JS files are properly linked, ensure the python link has somewhere to link to.
 - Problem: CSS actions not editiing in real time viewing.
 - Fix: Clear browser history and cookies and hard refresh page.
+- Problem: Logging users out when they pressed add new recipe or edit recipe
+- Fix: The secret key was updated to a consistent value ("MyRecipeAppSecretKey") instead of using os.urandom(24). This ensured that session data remained valid across requests, preventing users from being logged out unexpectedly.
 
 ### Acknowledgements
 
