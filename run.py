@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from bson import ObjectId
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Secures random secret key for sessions
+app.secret_key = "MyRecipeAppSecretKey"
 bcrypt = Bcrypt(app)
 
 # MongoDB connection string 
