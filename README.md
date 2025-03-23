@@ -14,7 +14,7 @@
 - Role-Based Access Control: Ensures secure access with session management, limiting recipe modifications to authenticated users.
 - Responsive & Accessible Design: Built with a mobile-first approach, ensuring seamless navigation on all devices with a clean and modern UI.
 
-**Key Features:**
+**Purpose:**
 - The purpose of this project is to create a site where users can store their own recipes and edit them as they wish. this allows users to keep up to date recipe examples and access them with ease.
 - The purpose of the user for this website is so that they can have their own recipes stored and access them with ease.
 
@@ -60,17 +60,27 @@ In the event that the primary fonts are unavailable, I’ve set a fallback to sa
 
 ## Data Schema 
 **User Collection**
-_id                : ObjectId  // Unique user ID (generated automatically)
-username           : String    // User-chosen unique username
-password           : String    // Hashed password for security
-security_question_1: String    // Answer to security question 1
-security_question_2: String    // Answer to security question 2
+### `users` Collection Schema
+
+| Field                    | Type      | Description                                                 |
+|--------------------------|-----------|-------------------------------------------------------------|
+| `_id`                    | ObjectId  | Unique user ID (generated automatically by MongoDB)         |
+| `username`               | String    | User-chosen unique username                                 |
+| `password`               | String    | Hashed password for authentication                          |
+| `security_question_1`    | String    | Answer to the first security question                       |
+| `security_question_2`    | String    | Answer to the second security question                      |
+
 
 **Recipes Collection**
-_id      : ObjectId  // Unique recipe ID (generated automatically)
-user_id  : ObjectId  // References the user's _id (links recipe to its creator)
-title    : String    // Recipe title
-content  : String    // Recipe instructions or description
+### `recipes` Collection Schema
+
+| Field    | Type      | Description                                              |
+|----------|-----------|----------------------------------------------------------|
+| `_id`    | ObjectId  | Unique recipe ID (generated automatically by MongoDB)    |
+| `user_id`| ObjectId  | References the user's `_id` (links recipe to its creator) |
+| `title`  | String    | Recipe title (User-provided)                             |
+| `content`| String    | Recipe instructions or description (User-provided)       |
+
 
 (documentation/screenshots/dataschema.png)
 
