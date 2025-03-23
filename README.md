@@ -82,7 +82,7 @@ In the event that the primary fonts are unavailable, I’ve set a fallback to sa
 | `content`| String    | Recipe instructions or description (User-provided)       |
 
 
-![Data Schema](documentationscreenshots/datamongo.png)
+![Data Schema](documentation/screenshots/datamongo.png/)
 
 
 
