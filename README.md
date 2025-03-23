@@ -14,6 +14,11 @@
 - Role-Based Access Control: Ensures secure access with session management, limiting recipe modifications to authenticated users.
 - Responsive & Accessible Design: Built with a mobile-first approach, ensuring seamless navigation on all devices with a clean and modern UI.
 
+**Key Features:**
+- The purpose of this project is to create a site where users can store their own recipes and edit them as they wish. this allows users to keep up to date recipe examples and access them with ease.
+- The purpose of the user for this website is so that they can have their own recipes stored and access them with ease.
+
+
 ## UX
 
 When designing a CRUD-based application, a recipe management system offers a compelling and user-centric experience. It allows users to efficiently create, view, edit, and delete their own recipes in a structured, easy-to-navigate environment. The key UX challenge lies in creating a seamless flow for users to interact with their recipe collection, whether they are adding new recipes, searching through them, or modifying existing entries.
@@ -52,6 +57,24 @@ For the body text, I used Open Sans, a highly readable sans-serif font. Its simp
 
 **Fallback Font: Sans-serif**
 In the event that the primary fonts are unavailable, I’ve set a fallback to sans-serif. This ensures that the text remains clean, simple, and easy to read across all devices, maintaining a consistent user experience.
+
+## Data Schema 
+**User Collection**
+_id                : ObjectId  // Unique user ID (generated automatically)
+username           : String    // User-chosen unique username
+password           : String    // Hashed password for security
+security_question_1: String    // Answer to security question 1
+security_question_2: String    // Answer to security question 2
+
+**Recipes Collection**
+_id      : ObjectId  // Unique recipe ID (generated automatically)
+user_id  : ObjectId  // References the user's _id (links recipe to its creator)
+title    : String    // Recipe title
+content  : String    // Recipe instructions or description
+
+(documentation/screenshots/dataschema.png)
+
+
 
 ## User Stories
 
@@ -135,10 +158,12 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
 ![Dashboard Phone View](documentation/screenshots/dashboard-snap-phone-bottom.png)
 
 ### User Testing
-
-- Users were asked to create and account, all users passed this test
-- Users were asked to create a new recipe, all users passed this test
-- Users were asked to try and restet their password, all users passed this test
+**User Testing**
+| Test |Outcome  |
+|--|--|
+|Users were asked to create and account, all users passed this test|Pass |
+|Users were asked to create a new recipe, all users passed this test|Pass |
+|Users were asked to try and restet their password, all users passed this test|Pass |
 
 ### User Feedback 
 
@@ -177,6 +202,7 @@ I have used [Wireframe](https://wireframe.cc) to design the wireframes for my si
   site-related content.
 - PyMongo: Python library for interacting with MongoDB.
 - bcrypt: A library used for hashing passwords securely.
+- dbdiagram: For reating my data schema diagram. https://dbdiagram.io/d
 
 **Deployment and Hosting**
 - Heroku: Cloud platform for deploying and hosting the web application.
@@ -227,6 +253,22 @@ My project uses a non-relational database (MongoDB), the database doesn't have a
 ## Testing
 
 - Testing for this project was completed manually. Testing was done after every new feature was implemented. This made sure I was aware if the new added feature was working correclty.
+**Testing for function and links**
+| Test |Outcome  |
+|--|--|
+|The login button when clicked takes users to the dahsboard | Pass
+|The forgot password button allows users to reset password with their security answers |Pass|
+|The create new recipe button takes users to the recipe form | Pass|
+|The edit and delete recipe button allows users to edit and delete recipe| Pass|
+|The recipes stack in a row side by side| Pass|
+|The log out button takes users back to the login page| Pass|
+|IF the user types in the wrong password or username, this site prompts them it is incorrect| Pass|
+
+**Testing for responsiveness**
+| Test |Outcome  |
+|--|--|
+|Test to see if the recipes fit in the page once the page is made smaller |Pass |
+|Test to see if on small screens, the recipes adjust to display in rows of two |Pass |
 
 ## Deployment
 ### Heroku 
